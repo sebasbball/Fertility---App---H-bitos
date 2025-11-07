@@ -26,7 +26,7 @@ body {
 }
 
 .header .icono {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 .header h1 {
@@ -114,26 +114,26 @@ body {
 }
 
 .promedio-icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: white;
 }
 
 .promedio-icon.morado {
-  background: linear-gradient(135deg, #9810fa, #c869ff);
+  background: linear-gradient(135deg, #9a0bff, #da99ff);
 }
 
 .promedio-icon.verde {
-  background: linear-gradient(135deg, #11dd63, #6fff9f);
+  background: linear-gradient(135deg, #08c855, #96feb9);
 }
 
 .promedio-icon.azul {
-  background: linear-gradient(135deg, #2b7fff, #7db3ff);
+  background: linear-gradient(135deg, #1170ff, #a5caff);
 }
 
 .promedio-info h3 {
@@ -188,10 +188,6 @@ body {
   margin-bottom: 8px;
 }
 
-.grafica-card .card-header i {
-  font-size: 1.3rem;
-  color: #f6339a;
-}
 
 .grafica-card .card-header h2 {
   font-size: 1.1rem;
@@ -264,11 +260,20 @@ body {
 }
 
 /* ============================================ */
-/* FILA 1: Calendario + Hidratación */
+/* FILA 1: Monitoreo de Sueño y Actividad Física */
 /* ============================================ */
-.fila-calendario-hidratacion {
+.fila-sueno-actividad {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ============================================ */
+/* FILA 2: Calendario */
+/* ============================================ */
+.fila-calendario {
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 20px;
 }
 
@@ -400,11 +405,10 @@ body {
 }
 
 /* ============================================ */
-/* SECCIÓN DERECHA: Cards de Sueño y Actividad */
+/* FILA 2: Monitoreo de Sueño y Actividad Física */
 /* ============================================ */
 .sueno-card,
-.actividad-card,
-.hidratacion-card {
+.actividad-card {
   background: white;
   border-radius: 15px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
@@ -412,8 +416,7 @@ body {
 }
 
 .sueno-card .card-header,
-.actividad-card .card-header,
-.hidratacion-card .card-header {
+.actividad-card .card-header {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -421,26 +424,130 @@ body {
 }
 
 .sueno-card .card-header i,
-.actividad-card .card-header i,
-.hidratacion-card .card-header i {
+.actividad-card .card-header i {
   font-size: 1.3rem;
-  color: #f6339a;
+  color: #615fff;
+}
+
+.actividad-card .card-header i {
+   color: #00c951;
 }
 
 .sueno-card .card-header h2,
-.actividad-card .card-header h2,
-.hidratacion-card .card-header h2 {
+.actividad-card .card-header h2 {
   font-size: 1.1rem;
   color: #0a0a0a;
   font-weight: 500;
   margin: 0;
 }
 
-.hidratacion-card .card-subtitle {
+/* ============================================ */
+/* FILA 3: Hidratación (Ancho Completo) */
+/* ============================================ */
+.fila-hidratacion {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.hidratacion-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  padding: 25px;
+}
+
+.hidratacion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 30px;
+}
+
+.hidratacion-info .card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.hidratacion-info .card-header i {
+  font-size: 1.3rem;
+  color: #f6339a;
+}
+
+.hidratacion-info .card-header h2 {
+  font-size: 1.1rem;
+  color: #0a0a0a;
+  font-weight: 500;
+  margin: 0;
+}
+
+.hidratacion-info .card-subtitle {
   color: #717182;
   font-size: 0.9rem;
-  margin-bottom: 15px;
-  margin-top: -10px;
+  margin: 0;
+}
+
+.hidratacion-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.progreso-circular {
+  position: relative;
+  width: 90px;
+  height: 90px;
+}
+
+.progreso-svg {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
+.progreso-bg {
+  fill: none;
+  stroke: #e8f7ff;
+  stroke-width: 8;
+}
+
+.progreso-bar {
+  fill: none;
+  stroke: url(#gradiente-azul);
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.progreso-texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.progreso-numero {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2b7fff;
+  line-height: 1;
+}
+
+.progreso-total {
+  font-size: 1rem;
+  color: #717182;
+  font-weight: 500;
+}
+
+.progreso-label {
+  font-size: 0.85rem;
+  color: #717182;
+  margin: 0;
+  text-align: center;
 }
 
 /* ============================================ */
@@ -579,7 +686,7 @@ body {
 /* ============================================ */
 .actividad-select {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   border: 1px solid #e0e0e5;
   border-radius: 10px;
   font-size: 0.9rem;
@@ -600,44 +707,43 @@ body {
 /* ============================================ */
 .vasos-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 12px;
-  margin-bottom: 20px;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 15px;
 }
 
 .vaso-btn {
   background: white;
   border: 2px solid #e0e0e5;
-  border-radius: 15px;
-  padding: 25px 20px;
+  border-radius: 12px;
+  padding: 18px 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
   color: #c5c5cf;
-  font-size: 2rem;
-  aspect-ratio: 1.5 / 1;
+  font-size: 1.2rem;
+  aspect-ratio: 1 / 1;
 }
 
 .vaso-btn:hover {
   background: #e8f7ff;
   border-color: #2b7fff;
   color: #2b7fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(43, 127, 255, 0.2);
 }
 
 .vaso-btn.lleno {
-  background: #e8f7ff;
+  background: linear-gradient(150deg, #2079ff, #a7ccff);
   border-color: #2b7fff;
-  color: #2b7fff;
+  color: white;
+  box-shadow: 0 2px 8px rgba(43, 127, 255, 0.3);
 }
 
-.vasos-contador {
-  text-align: center;
-  font-size: 0.95rem;
-  color: #717182;
-  margin-bottom: 20px;
+.vaso-btn.lleno:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(43, 127, 255, 0.4);
 }
 
 /* ============================================ */
@@ -645,7 +751,7 @@ body {
 /* ============================================ */
 .guardar-btn-global {
   width: 100%;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, #6466ff, #8855ff);
   border: none;
   color: white;
   padding: 14px;
@@ -683,7 +789,15 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .fila-calendario-hidratacion {
+  .fila-calendario {
+    grid-template-columns: 1fr;
+  }
+
+  .fila-sueno-actividad {
+    grid-template-columns: 1fr;
+  }
+
+  .fila-hidratacion {
     grid-template-columns: 1fr;
   }
   
@@ -800,9 +914,34 @@ body {
     gap: 15px;
   }
 
-  .fila-calendario-hidratacion {
+  .fila-calendario {
     grid-template-columns: 1fr;
     gap: 15px;
+  }
+
+  .fila-sueno-actividad {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .fila-hidratacion {
+    grid-template-columns: 1fr;
+  }
+
+  .hidratacion-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .vasos-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .vaso-btn {
+    padding: 15px 8px;
+    font-size: 1.1rem;
   }
 
   .seleccionar-dia-card,
@@ -841,15 +980,26 @@ body {
     font-size: 1.3rem;
   }
 
+  .fila-calendario {
+    grid-template-columns: 1fr;
+  }
+
+  .fila-sueno-actividad {
+    grid-template-columns: 1fr;
+  }
+
+  .fila-hidratacion {
+    grid-template-columns: 1fr;
+  }
+
   .vasos-grid {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
+    gap: 8px;
   }
 
   .vaso-btn {
-    padding: 20px 15px;
-    font-size: 1.8rem;
+    padding: 12px 6px;
+    font-size: 1rem;
   }
 
   .guardar-btn-global {
@@ -869,6 +1019,10 @@ body {
   }
 
   .fila-calendario-hidratacion {
+    grid-template-columns: 1fr;
+  }
+
+  .fila-sueno-actividad {
     grid-template-columns: 1fr;
   }
 
@@ -901,14 +1055,25 @@ body {
     font-size: 1.1rem;
   }
 
+  .fila-calendario {
+    grid-template-columns: 1fr;
+  }
+
+  .fila-sueno-actividad {
+    grid-template-columns: 1fr;
+  }
+
+  .fila-hidratacion {
+    grid-template-columns: 1fr;
+  }
+
   .vasos-grid {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 8px;
+    gap: 6px;
   }
 
   .vaso-btn {
-    padding: 18px 12px;
-    font-size: 1.6rem;
+    padding: 10px 5px;
+    font-size: 0.9rem;
   }
 }

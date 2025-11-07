@@ -87,7 +87,6 @@
     <!-- Gráfica: Horas de Sueño -->
     <div class="grafica-card">
       <div class="card-header">
-        <i class="fa-solid fa-chart-line"></i>
         <h2>Horas de Sueño</h2>
       </div>
       <p class="card-subtitle">Últimos 7 días</p>
@@ -141,7 +140,6 @@
     <!-- Gráfica: Actividad Física -->
     <div class="grafica-card">
       <div class="card-header">
-        <i class="fa-solid fa-chart-line"></i>
         <h2>Actividad Física</h2>
       </div>
       <p class="card-subtitle">Minutos por día</p>
@@ -199,10 +197,99 @@
   <main class="habitos-container">
     
     <!-- ============================================ -->
-    <!-- FILA 1: Calendario + Hidratación -->
+    <!-- FILA 1: Monitoreo de Sueño + Actividad Física -->
     <!-- ============================================ -->
-    <div class="fila-calendario-hidratacion">
-      <!-- CARD IZQUIERDA: Seleccionar Día -->
+    <div class="fila-sueno-actividad">
+      <!-- Monitoreo de Sueño -->
+      <div class="sueno-card">
+        <div class="card-header">
+          <i class="fa-solid fa-moon"></i>
+          <h2>Monitoreo de Sueño</h2>
+        </div>
+
+        <!-- Horas de sueño -->
+        <div class="control-group">
+          <div class="control-label">
+            <span>Horas de sueño</span>
+            <span class="control-valor">7h</span>
+          </div>
+          <input type="range" min="0" max="12" value="7" class="slider">
+        </div>
+
+        <!-- Calidad del sueño -->
+        <div class="control-group">
+          <label class="control-label-simple">Calidad del sueño</label>
+          <div class="calidad-opciones">
+            <button class="calidad-btn">
+              <i class="fa-regular fa-face-angry"></i>
+              <span>1</span>
+            </button>
+            <button class="calidad-btn">
+              <i class="fa-regular fa-face-frown"></i>
+              <span>2</span>
+            </button>
+            <button class="calidad-btn seleccionado">
+              <i class="fa-regular fa-face-meh"></i>
+              <span>3</span>
+            </button>
+            <button class="calidad-btn">
+              <i class="fa-regular fa-face-smile"></i>
+              <span>4</span>
+            </button>
+            <button class="calidad-btn">
+              <i class="fa-regular fa-face-laugh"></i>
+              <span>5</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Actividad Física -->
+      <div class="actividad-card">
+        <div class="card-header">
+          <i class="fa-solid fa-dumbbell"></i>
+          <h2>Actividad Física</h2>
+        </div>
+
+        <!-- Tipo de actividad -->
+        <div class="control-group">
+          <label class="control-label-simple">Tipo de actividad</label>
+          <select class="actividad-select">
+            <option value="">Selecciona una actividad</option>
+            <option value="caminar">Caminar</option>
+            <option value="correr">Correr</option>
+            <option value="yoga">Yoga</option>
+            <option value="gym">Gimnasio</option>
+            <option value="natacion">Natación</option>
+            <option value="ciclismo">Ciclismo</option>
+          </select>
+        </div>
+
+        <!-- Duración -->
+        <div class="control-group">
+          <div class="control-label">
+            <span>Duración</span>
+            <span class="control-valor verde">30 min</span>
+          </div>
+          <input type="range" min="0" max="120" value="30" class="slider verde">
+        </div>
+
+        <!-- Intensidad -->
+        <div class="control-group">
+          <div class="control-label">
+            <span>Intensidad</span>
+            <span class="control-valor naranja">5/10</span>
+          </div>
+          <input type="range" min="0" max="10" value="5" class="slider naranja">
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- FILA 2: Calendario -->
+    <!-- ============================================ -->
+    <div class="fila-calendario">
+      <!-- CARD: Seleccionar Día -->
       <section class="seleccionar-dia-card">
         <div class="card-header">
           <i class="fa-regular fa-calendar"></i>
@@ -279,132 +366,72 @@
         <!-- Fecha seleccionada -->
         <div class="fecha-seleccionada">viernes, 7 de noviembre de 2025</div>
       </section>
+    </div>
 
-      <!-- CARD DERECHA: Hidratación -->
+    <!-- ============================================ -->
+    <!-- FILA 3: Hidratación (Ancho Completo) -->
+    <!-- ============================================ -->
+    <div class="fila-hidratacion">
+      <!-- CARD: Hidratación -->
       <div class="hidratacion-card">
-        <div class="card-header">
-          <i class="fa-solid fa-droplet"></i>
-          <h2>Hidratación</h2>
+        <div class="hidratacion-header">
+          <div class="hidratacion-info">
+            <div class="card-header">
+              <i class="fa-solid fa-droplet"></i>
+              <h2>Hidratación</h2>
+            </div>
+            <p class="card-subtitle">Meta: 8 vasos al día</p>
+          </div>
+          
+          <div class="hidratacion-stats">
+            <div class="progreso-circular">
+              <svg class="progreso-svg" viewBox="0 0 100 100">
+                <defs>
+                  <linearGradient id="gradiente-azul" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#2b7fff;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#7db3ff;stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                <circle class="progreso-bg" cx="50" cy="50" r="40"/>
+                <circle class="progreso-bar" cx="50" cy="50" r="40" 
+                  style="stroke-dasharray: 251.2; stroke-dashoffset: 220;"/>
+              </svg>
+              <div class="progreso-texto">
+                <span class="progreso-numero">1</span>
+                <span class="progreso-total">/8</span>
+              </div>
+            </div>
+            <p class="progreso-label">vasos hoy</p>
+          </div>
         </div>
-        <p class="card-subtitle">Meta: 8 vasos al día</p>
 
-        <!-- Grid de vasos (2 filas x 4 columnas) -->
+        <!-- Grid de vasos (1 fila x 8 columnas) -->
         <div class="vasos-grid">
           <button class="vaso-btn lleno">
-            <i class="fa-solid fa-wine-glass"></i>
+            <i class="fa-solid fa-droplet"></i>
           </button>
           <button class="vaso-btn">
-            <i class="fa-solid fa-wine-glass"></i>
+            <i class="fa-solid fa-droplet"></i>
           </button>
           <button class="vaso-btn">
-            <i class="fa-solid fa-wine-glass"></i>
+            <i class="fa-solid fa-droplet"></i>
           </button>
           <button class="vaso-btn">
-            <i class="fa-solid fa-wine-glass"></i>
+            <i class="fa-solid fa-droplet"></i>
           </button>
           <button class="vaso-btn">
-            <i class="fa-solid fa-wine-glass"></i>
+            <i class="fa-solid fa-droplet"></i>
           </button>
           <button class="vaso-btn">
-            <i class="fa-solid fa-wine-glass"></i>
+            <i class="fa-solid fa-droplet"></i>
           </button>
           <button class="vaso-btn">
-            <i class="fa-solid fa-wine-glass"></i>
+            <i class="fa-solid fa-droplet"></i>
           </button>
           <button class="vaso-btn">
-            <i class="fa-solid fa-wine-glass"></i>
+            <i class="fa-solid fa-droplet"></i>
           </button>
         </div>
-
-        <p class="vasos-contador">0 de 8 vasos</p>
-      </div>
-    </div>
-
-    <!-- ============================================ -->
-    <!-- FILA 2: Monitoreo de Sueño -->
-    <!-- ============================================ -->
-    <div class="sueno-card">
-      <div class="card-header">
-        <i class="fa-solid fa-moon"></i>
-        <h2>Monitoreo de Sueño</h2>
-      </div>
-
-      <!-- Horas de sueño -->
-      <div class="control-group">
-        <div class="control-label">
-          <span>Horas de sueño</span>
-          <span class="control-valor">7h</span>
-        </div>
-        <input type="range" min="0" max="12" value="7" class="slider">
-      </div>
-
-      <!-- Calidad del sueño -->
-      <div class="control-group">
-        <label class="control-label-simple">Calidad del sueño</label>
-        <div class="calidad-opciones">
-          <button class="calidad-btn">
-            <i class="fa-regular fa-face-angry"></i>
-            <span>1</span>
-          </button>
-          <button class="calidad-btn">
-            <i class="fa-regular fa-face-frown"></i>
-            <span>2</span>
-          </button>
-          <button class="calidad-btn seleccionado">
-            <i class="fa-regular fa-face-meh"></i>
-            <span>3</span>
-          </button>
-          <button class="calidad-btn">
-            <i class="fa-regular fa-face-smile"></i>
-            <span>4</span>
-          </button>
-          <button class="calidad-btn">
-            <i class="fa-regular fa-face-laugh"></i>
-            <span>5</span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- ============================================ -->
-    <!-- FILA 3: Actividad Física -->
-    <!-- ============================================ -->
-    <div class="actividad-card">
-      <div class="card-header">
-        <i class="fa-solid fa-dumbbell"></i>
-        <h2>Actividad Física</h2>
-      </div>
-
-      <!-- Tipo de actividad -->
-      <div class="control-group">
-        <label class="control-label-simple">Tipo de actividad</label>
-        <select class="actividad-select">
-          <option value="">Selecciona una actividad</option>
-          <option value="caminar">Caminar</option>
-          <option value="correr">Correr</option>
-          <option value="yoga">Yoga</option>
-          <option value="gym">Gimnasio</option>
-          <option value="natacion">Natación</option>
-          <option value="ciclismo">Ciclismo</option>
-        </select>
-      </div>
-
-      <!-- Duración -->
-      <div class="control-group">
-        <div class="control-label">
-          <span>Duración</span>
-          <span class="control-valor verde">30 min</span>
-        </div>
-        <input type="range" min="0" max="120" value="30" class="slider verde">
-      </div>
-
-      <!-- Intensidad -->
-      <div class="control-group">
-        <div class="control-label">
-          <span>Intensidad</span>
-          <span class="control-valor naranja">5/10</span>
-        </div>
-        <input type="range" min="0" max="10" value="5" class="slider naranja">
       </div>
     </div>
 
