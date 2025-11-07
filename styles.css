@@ -114,26 +114,26 @@ body {
 }
 
 .promedio-icon {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   color: white;
 }
 
 .promedio-icon.morado {
-  background: linear-gradient(135deg, #9a0bff, #da99ff);
+  background: linear-gradient(140deg, #990aff, #e1acff);
 }
 
 .promedio-icon.verde {
-  background: linear-gradient(135deg, #08c855, #96feb9);
+  background: linear-gradient(140deg, #17d463, #a7ffc4);
 }
 
 .promedio-icon.azul {
-  background: linear-gradient(135deg, #1170ff, #a5caff);
+  background: linear-gradient(140deg, #106df9, #acceff);
 }
 
 .promedio-info h3 {
@@ -188,6 +188,10 @@ body {
   margin-bottom: 8px;
 }
 
+.grafica-card .card-header i {
+  font-size: 1.3rem;
+  color: #f6339a;
+}
 
 .grafica-card .card-header h2 {
   font-size: 1.1rem;
@@ -395,12 +399,12 @@ body {
 }
 
 .fecha-seleccionada {
-  color: #717182;
+  color: #364153;
   font-size: 0.9rem;
   text-align: center;
   margin: 20px 0 0 0;
   padding: 12px;
-  background: #f8f8fa;
+  background: #eef2ff;
   border-radius: 8px;
 }
 
@@ -426,7 +430,7 @@ body {
 .sueno-card .card-header i,
 .actividad-card .card-header i {
   font-size: 1.3rem;
-  color: #615fff;
+  color: #9810fa;
 }
 
 .actividad-card .card-header i {
@@ -473,7 +477,7 @@ body {
 
 .hidratacion-info .card-header i {
   font-size: 1.3rem;
-  color: #f6339a;
+  color: #238dff;
 }
 
 .hidratacion-info .card-header h2 {
@@ -686,7 +690,7 @@ body {
 /* ============================================ */
 .actividad-select {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #e0e0e5;
   border-radius: 10px;
   font-size: 0.9rem;
@@ -697,9 +701,14 @@ body {
   transition: 0.3s;
 }
 
+.actividad-select option{
+   background-color: linear-gradient(135deg, #f8f1f8, #eef0fb);
+}
+
+
 .actividad-select:focus {
   outline: none;
-  border-color: #11dd63;
+  border-color: #22e26f;
 }
 
 /* ============================================ */
@@ -730,12 +739,12 @@ body {
   background: #e8f7ff;
   border-color: #2b7fff;
   color: #2b7fff;
-  transform: translateY(-2px);
+  transform: translateY(-4px);
   box-shadow: 0 4px 8px rgba(43, 127, 255, 0.2);
 }
 
 .vaso-btn.lleno {
-  background: linear-gradient(150deg, #2079ff, #a7ccff);
+  background: linear-gradient(150deg, #217aff, #93c0ff);
   border-color: #2b7fff;
   color: white;
   box-shadow: 0 2px 8px rgba(43, 127, 255, 0.3);
@@ -751,7 +760,7 @@ body {
 /* ============================================ */
 .guardar-btn-global {
   width: 100%;
-  background: linear-gradient(135deg, #6466ff, #8855ff);
+  background: linear-gradient(135deg, #494cff, #804aff);
   border: none;
   color: white;
   padding: 14px;
