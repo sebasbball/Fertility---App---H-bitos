@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Ciclo - Hábitos</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome para los iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="fertility-app/Images/heart-favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <!-- ============================================ -->
+  <!-- HEADER: Logo, título y navegación por tabs -->
+  <!-- ============================================ -->
+  <header class="header">
+    <div class="logo">
+      <div class="icono"><i class="fa-solid fa-heart" style="color: #f6339a;"></i></div>
+      <h1>Mi Ciclo</h1>
+      <p>Seguimiento de fertilidad y ciclo menstrual</p>
+    </div>
+
+    <!-- Checkbox oculto para controlar el menú (solo CSS) -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+    <!-- Botón hamburguesa (solo visible en móvil) -->
+    <label for="menu-toggle" class="hamburger">
+      <i class="fa-solid fa-bars"></i>
+    </label>
+
+    <!-- Navegación con tabs -->
+    <nav class="tabs">
+      <button>Calendario</button>
+      <button>Estadísticas</button>
+      <button>Registro Diario</button>
+      <button class="active">Hábitos</button>
+    </nav>
+  </header>
+
+  <!-- ============================================ -->
+  <!-- SECCIÓN SUPERIOR: Cards de Promedios -->
+  <!-- ============================================ -->
+  <section class="promedios-section">
+    <!-- Card: Sueño Promedio -->
+    <div class="promedio-card">
+      <div class="promedio-icon morado">
+        <i class="fa-solid fa-moon"></i>
+      </div>
+      <div class="promedio-info">
+        <h3>Sueño Promedio</h3>
+        <p class="promedio-valor">0 <span>horas/día</span></p>
+        <p class="promedio-periodo">Última semana</p>
+      </div>
+    </div>
+
+    <!-- Card: Actividad Promedio -->
+    <div class="promedio-card">
+      <div class="promedio-icon verde">
+        <i class="fa-solid fa-dumbbell"></i>
+      </div>
+      <div class="promedio-info">
+        <h3>Actividad Promedio</h3>
+        <p class="promedio-valor">0 <span>min/día</span></p>
+        <p class="promedio-periodo">Última semana</p>
+      </div>
+    </div>
+
+    <!-- Card: Hidratación Promedio -->
+    <div class="promedio-card">
+      <div class="promedio-icon azul">
+        <i class="fa-solid fa-droplet"></i>
+      </div>
+      <div class="promedio-info">
+        <h3>Hidratación Promedio</h3>
+        <p class="promedio-valor">0 <span>vasos/día</span></p>
+        <p class="promedio-periodo">Última semana</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- SECCIÓN GRÁFICAS -->
+  <!-- ============================================ -->
+  <section class="graficas-section">
+    <!-- Gráfica: Horas de Sueño -->
+    <div class="grafica-card">
+      <div class="card-header">
+        <i class="fa-solid fa-chart-line"></i>
+        <h2>Horas de Sueño</h2>
+      </div>
+      <p class="card-subtitle">Últimos 7 días</p>
+      
+      <div class="grafica-container">
+        <div class="eje-y">
+          <span>4</span>
+          <span>3</span>
+          <span>2</span>
+          <span>1</span>
+          <span>0</span>
+        </div>
+        <div class="grafica-area">
+          <svg viewBox="0 0 640 180" class="grafica-svg">
+            <!-- Grid lines horizontales -->
+            <line x1="0" y1="0" x2="640" y2="0" stroke="#e8e8ec" stroke-width="1" stroke-dasharray="5,5"/>
+            <line x1="0" y1="45" x2="640" y2="45" stroke="#e8e8ec" stroke-width="1" stroke-dasharray="5,5"/>
+            <line x1="0" y1="90" x2="640" y2="90" stroke="#e8e8ec" stroke-width="1" stroke-dasharray="5,5"/>
+            <line x1="0" y1="135" x2="640" y2="135" stroke="#e8e8ec" stroke-width="1" stroke-dasharray="5,5"/>
+            <line x1="0" y1="180" x2="640" y2="180" stroke="#e8e8ec" stroke-width="1" stroke-dasharray="5,5"/>
+            
+            <!-- Línea de datos -->
+            <polyline
+              fill="none"
+              stroke="#9810fa"
+              stroke-width="3"
+              points="0,180 107,180 214,180 321,180 428,180 535,180 640,180"
+            />
+            <!-- Puntos -->
+            <circle cx="0" cy="180" r="5" fill="#9810fa"/>
+            <circle cx="107" cy="180" r="5" fill="#9810fa"/>
+            <circle cx="214" cy="180" r="5" fill="#9810fa"/>
+            <circle cx="321" cy="180" r="5" fill="#9810fa"/>
+            <circle cx="428" cy="180" r="5" fill="#9810fa"/>
+            <circle cx="535" cy="180" r="5" fill="#9810fa"/>
+            <circle cx="640" cy="180" r="5" fill="#9810fa"/>
+          </svg>
+          <div class="eje-x">
+            <span>1/11</span>
+            <span>2/11</span>
+            <span>3/11</span>
+            <span>4/11</span>
+            <span>5/11</span>
+            <span>6/11</span>
+            <span>7/11</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gráfica: Actividad Física -->
+    <div class="grafica-card">
+      <div class="card-header">
+        <i class="fa-solid fa-chart-line"></i>
+        <h2>Actividad Física</h2>
+      </div>
+      <p class="card-subtitle">Minutos por día</p>
+      
+      <div class="grafica-container">
+        <div class="eje-y">
+          <span>4</span>
+          <span>3</span>
+          <span>2</span>
+          <span>1</span>
+          <span>0</span>
+        </div>
+        <div class="grafica-area">
+          <svg viewBox="0 0 640 180" class="grafica-svg">
+            <!-- Grid lines horizontales -->
+            <line x1="0" y1="0" x2="640" y2="0" stroke="#e8e8ec" stroke-width="1" stroke-dasharray="5,5"/>
+            <line x1="0" y1="45" x2="640" y2="45" stroke="#e8e8ec" stroke-width="1" stroke-dasharray="5,5"/>
+            <line x1="0" y1="90" x2="640" y2="90" stroke="#e8e8ec" stroke-width="1" stroke-dasharray="5,5"/>
+            <line x1="0" y1="135" x2="640" y2="135" stroke="#e8e8ec" stroke-width="1" stroke-dasharray="5,5"/>
+            <line x1="0" y1="180" x2="640" y2="180" stroke="#e8e8ec" stroke-width="1" stroke-dasharray="5,5"/>
+            
+            <!-- Línea de datos -->
+            <polyline
+              fill="none"
+              stroke="#11dd63"
+              stroke-width="3"
+              points="0,180 107,180 214,180 321,180 428,180 535,180 640,180"
+            />
+            <!-- Puntos -->
+            <circle cx="0" cy="180" r="5" fill="#11dd63"/>
+            <circle cx="107" cy="180" r="5" fill="#11dd63"/>
+            <circle cx="214" cy="180" r="5" fill="#11dd63"/>
+            <circle cx="321" cy="180" r="5" fill="#11dd63"/>
+            <circle cx="428" cy="180" r="5" fill="#11dd63"/>
+            <circle cx="535" cy="180" r="5" fill="#11dd63"/>
+            <circle cx="640" cy="180" r="5" fill="#11dd63"/>
+          </svg>
+          <div class="eje-x">
+            <span>1/11</span>
+            <span>2/11</span>
+            <span>3/11</span>
+            <span>4/11</span>
+            <span>5/11</span>
+            <span>6/11</span>
+            <span>7/11</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- SECCIÓN INFERIOR: Calendario + Formulario -->
+  <!-- ============================================ -->
+  <main class="habitos-container">
+    
+    <!-- ============================================ -->
+    <!-- FILA 1: Calendario + Hidratación -->
+    <!-- ============================================ -->
+    <div class="fila-calendario-hidratacion">
+      <!-- CARD IZQUIERDA: Seleccionar Día -->
+      <section class="seleccionar-dia-card">
+        <div class="card-header">
+          <i class="fa-regular fa-calendar"></i>
+          <h2>Seleccionar Día</h2>
+        </div>
+        <p class="card-subtitle">Registra tus hábitos diarios</p>
+
+        <!-- Calendario -->
+        <div class="calendario">
+          <div class="calendario-header">
+            <button class="nav-btn"><i class="fa-solid fa-chevron-left"></i></button>
+            <span class="mes-anio">November 2025</span>
+            <button class="nav-btn"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+
+          <!-- Días de la semana -->
+          <div class="dias-semana">
+            <span>Su</span>
+            <span>Mo</span>
+            <span>Tu</span>
+            <span>We</span>
+            <span>Th</span>
+            <span>Fr</span>
+            <span>Sa</span>
+          </div>
+
+          <!-- Grid de días del mes -->
+          <div class="dias-grid">
+            <span class="dia-otro-mes">26</span>
+            <span class="dia-otro-mes">27</span>
+            <span class="dia-otro-mes">28</span>
+            <span class="dia-otro-mes">29</span>
+            <span class="dia-otro-mes">30</span>
+            <span class="dia-otro-mes">31</span>
+            <span class="dia">1</span>
+            <span class="dia">2</span>
+            <span class="dia">3</span>
+            <span class="dia">4</span>
+            <span class="dia">5</span>
+            <span class="dia">6</span>
+            <span class="dia seleccionado">7</span>
+            <span class="dia">8</span>
+            <span class="dia">9</span>
+            <span class="dia">10</span>
+            <span class="dia">11</span>
+            <span class="dia">12</span>
+            <span class="dia">13</span>
+            <span class="dia">14</span>
+            <span class="dia">15</span>
+            <span class="dia">16</span>
+            <span class="dia">17</span>
+            <span class="dia">18</span>
+            <span class="dia">19</span>
+            <span class="dia">20</span>
+            <span class="dia">21</span>
+            <span class="dia">22</span>
+            <span class="dia">23</span>
+            <span class="dia">24</span>
+            <span class="dia">25</span>
+            <span class="dia">26</span>
+            <span class="dia">27</span>
+            <span class="dia">28</span>
+            <span class="dia">29</span>
+            <span class="dia">30</span>
+            <span class="dia-otro-mes">1</span>
+            <span class="dia-otro-mes">2</span>
+            <span class="dia-otro-mes">3</span>
+            <span class="dia-otro-mes">4</span>
+            <span class="dia-otro-mes">5</span>
+            <span class="dia-otro-mes">6</span>
+          </div>
+        </div>
+
+        <!-- Fecha seleccionada -->
+        <div class="fecha-seleccionada">viernes, 7 de noviembre de 2025</div>
+      </section>
+
+      <!-- CARD DERECHA: Hidratación -->
+      <div class="hidratacion-card">
+        <div class="card-header">
+          <i class="fa-solid fa-droplet"></i>
+          <h2>Hidratación</h2>
+        </div>
+        <p class="card-subtitle">Meta: 8 vasos al día</p>
+
+        <!-- Grid de vasos (2 filas x 4 columnas) -->
+        <div class="vasos-grid">
+          <button class="vaso-btn lleno">
+            <i class="fa-solid fa-wine-glass"></i>
+          </button>
+          <button class="vaso-btn">
+            <i class="fa-solid fa-wine-glass"></i>
+          </button>
+          <button class="vaso-btn">
+            <i class="fa-solid fa-wine-glass"></i>
+          </button>
+          <button class="vaso-btn">
+            <i class="fa-solid fa-wine-glass"></i>
+          </button>
+          <button class="vaso-btn">
+            <i class="fa-solid fa-wine-glass"></i>
+          </button>
+          <button class="vaso-btn">
+            <i class="fa-solid fa-wine-glass"></i>
+          </button>
+          <button class="vaso-btn">
+            <i class="fa-solid fa-wine-glass"></i>
+          </button>
+          <button class="vaso-btn">
+            <i class="fa-solid fa-wine-glass"></i>
+          </button>
+        </div>
+
+        <p class="vasos-contador">0 de 8 vasos</p>
+      </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- FILA 2: Monitoreo de Sueño -->
+    <!-- ============================================ -->
+    <div class="sueno-card">
+      <div class="card-header">
+        <i class="fa-solid fa-moon"></i>
+        <h2>Monitoreo de Sueño</h2>
+      </div>
+
+      <!-- Horas de sueño -->
+      <div class="control-group">
+        <div class="control-label">
+          <span>Horas de sueño</span>
+          <span class="control-valor">7h</span>
+        </div>
+        <input type="range" min="0" max="12" value="7" class="slider">
+      </div>
+
+      <!-- Calidad del sueño -->
+      <div class="control-group">
+        <label class="control-label-simple">Calidad del sueño</label>
+        <div class="calidad-opciones">
+          <button class="calidad-btn">
+            <i class="fa-regular fa-face-angry"></i>
+            <span>1</span>
+          </button>
+          <button class="calidad-btn">
+            <i class="fa-regular fa-face-frown"></i>
+            <span>2</span>
+          </button>
+          <button class="calidad-btn seleccionado">
+            <i class="fa-regular fa-face-meh"></i>
+            <span>3</span>
+          </button>
+          <button class="calidad-btn">
+            <i class="fa-regular fa-face-smile"></i>
+            <span>4</span>
+          </button>
+          <button class="calidad-btn">
+            <i class="fa-regular fa-face-laugh"></i>
+            <span>5</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- FILA 3: Actividad Física -->
+    <!-- ============================================ -->
+    <div class="actividad-card">
+      <div class="card-header">
+        <i class="fa-solid fa-dumbbell"></i>
+        <h2>Actividad Física</h2>
+      </div>
+
+      <!-- Tipo de actividad -->
+      <div class="control-group">
+        <label class="control-label-simple">Tipo de actividad</label>
+        <select class="actividad-select">
+          <option value="">Selecciona una actividad</option>
+          <option value="caminar">Caminar</option>
+          <option value="correr">Correr</option>
+          <option value="yoga">Yoga</option>
+          <option value="gym">Gimnasio</option>
+          <option value="natacion">Natación</option>
+          <option value="ciclismo">Ciclismo</option>
+        </select>
+      </div>
+
+      <!-- Duración -->
+      <div class="control-group">
+        <div class="control-label">
+          <span>Duración</span>
+          <span class="control-valor verde">30 min</span>
+        </div>
+        <input type="range" min="0" max="120" value="30" class="slider verde">
+      </div>
+
+      <!-- Intensidad -->
+      <div class="control-group">
+        <div class="control-label">
+          <span>Intensidad</span>
+          <span class="control-valor naranja">5/10</span>
+        </div>
+        <input type="range" min="0" max="10" value="5" class="slider naranja">
+      </div>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- BOTÓN GUARDAR (Fuera de las cards) -->
+    <!-- ============================================ -->
+    <button class="guardar-btn-global">
+      <i class="fa-regular fa-heart"></i>
+      Guardar Hábitos del Día
+    </button>
+
+  </main>
+
+</body>
+</html>
